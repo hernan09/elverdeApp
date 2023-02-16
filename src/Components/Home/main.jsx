@@ -30,7 +30,6 @@ function Home(){
         fetch(url, options)
         .then(res => res.json())
         .then(json => {
-            console.log('el json', json)
             setShellOfiAfter(json[2].value_sell) // valor venta oficial dia anterior
             setShellBlueAfter(json[3].value_sell) // valor del blue dia anterior
             setDolarBLue(json[1].source); // etiqueta blue
@@ -39,42 +38,46 @@ function Home(){
             setDolarOfi(json[0].source); // etiqueta Oficial
             setShellOfi(json[0].value_sell); // valor de venta oficial
             setBuyOfi(json[0].value_buy); // valor de compra oficial
+            calculateAverageBlue(ShellBLueAfter, ShellBlue);
+            calculateAverageOficial(ShellOfiAfter, ShellOfi)
             setIsLoading(false);
-            calculateAverageBlue()
-            calculateAverageOficial()
         })
         .catch(err => console.error('error:' + err));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[]);
+    },[ShellBLueAfter,ShellBlue ]);
 
-    const calculateColorAverage = (valueAfter, valueToday)=> {
+    const calculateColorAverageBlue = ()=> {
         let divAverageBLue = document.querySelector('.blue-average');
-        if (valueAfter > valueToday) {
+        if (ShellBLueAfter > ShellBlue) {
             divAverageBLue.classList.add('lowred')
         } else {
             divAverageBLue.classList.add('higtgreen')
         }
     }
 
-    const calculateColorAverageOficial = (valueAfter, valueToday)=> {
-        let divAverageBLue = document.querySelector('.oficial-average');
-        if (valueAfter > valueToday) {
-            divAverageBLue.classList.add('lowred')
+    const calculateColorAverageOficial = ()=> {
+        let divAverageOficial = document.querySelector('.oficial-average');
+        if (ShellOfiAfter > ShellOfi) {
+            divAverageOficial.classList.add('lowred')
         } else {
-            divAverageBLue.classList.add('higtgreen')
+            divAverageOficial.classList.add('higtgreen')
         }
     }
 
-    const calculateAverageOficial = () => {
-        let averageOficial = Math.round((ShellOfiAfter + ShellOfi)/ 2);
-        setAverageOfi(averageOficial);
-        calculateColorAverageOficial(ShellOfiAfter, ShellOfi)
+    const calculateAverageOficial = async (precioAyer, precioHoy) => {
+        let suma = precioAyer + precioHoy;
+        let averageOficiall = Math.round(suma / 2);
+        console.log('promedio oficial', averageOficiall);
+        setAverageOfi(averageOficiall);
+        await calculateColorAverageOficial()
     }
 
-    const calculateAverageBlue = () => {
-        let averageBlue = Math.round((ShellBLueAfter + ShellBlue)/ 2);
-        setAverageBlue(averageBlue);
-        calculateColorAverage(ShellBLueAfter, ShellBlue)
+    const calculateAverageBlue =async (precioAyer, precioHoy) => {
+        let suma = precioAyer + precioHoy;
+        let averageBluee = Math.round(suma / 2);
+        console.log('promedio blue', averageBluee);
+        setAverageBlue(averageBluee);
+        await calculateColorAverageBlue()
     }
     
 
