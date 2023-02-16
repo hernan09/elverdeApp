@@ -91,4 +91,8 @@
 
 .title {
   font-weight: 700;
+  text-transform: uppercase;
+}
+.title-prom {
+  font-size: 16px;
 }

@@ -59,7 +59,7 @@ function Home(){
                     </div>
                     {/* hardode por el momento hacer metodo de promedio */}
                     <div className='content-text promedio'>
-                        <h3 className='title prom'>Promedio</h3>
+                        <h3 className='title-prom'>Promedio</h3>
                         <span className='item-span'>378</span>
                     </div> 
                     
@@ -75,7 +75,7 @@ function Home(){
                         <span className='item-span'>{buyOfi}</span>
                     </div>  
                     <div className='content-text promedio'>
-                        <h3 className='title prom'>Promedio</h3>
+                        <h3 className='title-prom'>Promedio</h3>
                         <span className='item-span'>378</span>
                     </div> 
                 </div>
