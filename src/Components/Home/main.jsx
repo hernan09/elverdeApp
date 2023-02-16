@@ -40,17 +40,41 @@ function Home(){
             setShellOfi(json[0].value_sell); // valor de venta oficial
             setBuyOfi(json[0].value_buy); // valor de compra oficial
             setIsLoading(false);
+            calculateAverageBlue()
+            calculateAverageOficial()
         })
         .catch(err => console.error('error:' + err));
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
 
+    const calculateColorAverage = (valueAfter, valueToday)=> {
+        let divAverageBLue = document.querySelector('.blue-average');
+        if (valueAfter > valueToday) {
+            divAverageBLue.classList.add('lowred')
+        } else {
+            divAverageBLue.classList.add('higtgreen')
+        }
+    }
+
+    const calculateColorAverageOficial = (valueAfter, valueToday)=> {
+        let divAverageBLue = document.querySelector('.oficial-average');
+        if (valueAfter > valueToday) {
+            divAverageBLue.classList.add('lowred')
+        } else {
+            divAverageBLue.classList.add('higtgreen')
+        }
+    }
+
     const calculateAverageOficial = () => {
-        
+        let averageOficial = Math.round((ShellOfiAfter + ShellOfi)/ 2);
+        setAverageOfi(averageOficial);
+        calculateColorAverageOficial(ShellOfiAfter, ShellOfi)
     }
 
     const calculateAverageBlue = () => {
-        
+        let averageBlue = Math.round((ShellBLueAfter + ShellBlue)/ 2);
+        setAverageBlue(averageBlue);
+        calculateColorAverage(ShellBLueAfter, ShellBlue)
     }
     
 
@@ -73,9 +97,9 @@ function Home(){
                         <span className='item-span'>{buyBlue}</span>
                     </div>
                     {/* hardode por el momento hacer metodo de promedio */}
-                    <div className='content-text promedio'>
+                    <div className='content-text promedio blue-average'>
                         <h3 className='title-prom'>Promedio</h3>
-                        <span className='item-span-prom'>{ShellBLueAfter}</span>
+                        <span className='item-span-prom'>{averageBlue}</span>
                     </div> 
                     
                 </div>
@@ -89,9 +113,9 @@ function Home(){
                         <h3>Compra</h3>
                         <span className='item-span'>{buyOfi}</span>
                     </div>  
-                    <div className='content-text promedio'>
+                    <div className='content-text promedio oficial-average'>
                         <h3 className='title-prom'>Promedio</h3>
-                        <span className='item-span-prom'>{ShellOfiAfter}</span>
+                        <span className='item-span-prom'>{averageOfi}</span>
                     </div> 
                 </div>
            </div>}
