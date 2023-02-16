@@ -10,6 +10,11 @@ function Home(){
     const [buyOfi, setBuyOfi] = useState(null);
     const [buyBlue, setBuyBlue] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
+    const [ShellOfiAfter, setShellOfiAfter] = useState(null);
+    const [ShellBLueAfter, setShellBlueAfter] = useState(null);
+
+    const [averageBlue, setAverageBlue] = useState(null);
+    const [averageOfi, setAverageOfi] = useState(null);
 
     const url = 'https://api.bluelytics.com.ar/v2/evolution.json?days=4';
 
@@ -26,6 +31,8 @@ function Home(){
         .then(res => res.json())
         .then(json => {
             console.log('el json', json)
+            setShellOfiAfter(json[2].value_sell) // valor venta oficial dia anterior
+            setShellBlueAfter(json[3].value_sell) // valor del blue dia anterior
             setDolarBLue(json[1].source); // etiqueta blue
             setShellBlue(json[1].value_sell); // valor de venta blue
             setBuyBlue(json[1].value_buy); // valor de compra blue
@@ -37,6 +44,14 @@ function Home(){
         .catch(err => console.error('error:' + err));
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
+
+    const calculateAverageOficial = () => {
+        
+    }
+
+    const calculateAverageBlue = () => {
+        
+    }
     
 
     return (
@@ -47,7 +62,7 @@ function Home(){
                 <h2 className='titleapp'>EL VERDE-APP</h2>
             </div>
                 <div className='content-dolarblue'>
-                    <h3 className='title blue'>{DolaBlue}</h3> 
+                    <h3 className='title blue'>Dolar {DolaBlue}</h3> 
                     {/* hacer metodo que afecte ambas box con icono de flecita que muestre si aumento o subio */}
                     <div className='content-text venta'>
                         <h3>Venta</h3>
@@ -60,12 +75,12 @@ function Home(){
                     {/* hardode por el momento hacer metodo de promedio */}
                     <div className='content-text promedio'>
                         <h3 className='title-prom'>Promedio</h3>
-                        <span className='item-span'>378</span>
+                        <span className='item-span-prom'>{ShellBLueAfter}</span>
                     </div> 
                     
                 </div>
                 <div className='content-dolarofi'>
-                    <h3 className='title ofi'>{DolarOfi}</h3>
+                    <h3 className='title ofi'>Dolar {DolarOfi}</h3>
                     <div className='content-text venta'>
                         <h3>Venta</h3>
                         <span className='item-span'>{ShellOfi}</span>
@@ -76,7 +91,7 @@ function Home(){
                     </div>  
                     <div className='content-text promedio'>
                         <h3 className='title-prom'>Promedio</h3>
-                        <span className='item-span'>378</span>
+                        <span className='item-span-prom'>{ShellOfiAfter}</span>
                     </div> 
                 </div>
            </div>}

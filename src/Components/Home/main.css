@@ -55,7 +55,7 @@
 .content-text {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: baseline;
   box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
   padding-bottom: 10px;
@@ -87,6 +87,7 @@
 .item-span {
   font-family: 'Creepster', cursive;
   font-family: 'Noto Sans Mono', monospace;
+  margin-left: 10px;
 }
 
 .title {
