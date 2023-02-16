@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import Home from './Components/Home/main.jsx';
+import Particles from "react-tsparticles";
+import particlesConfig from './config/particles';
+import { useCallback } from "react";
+import { loadFull } from "tsparticles";
+
+
 
 function App() {
+  const particlesInit = useCallback(async engine => {
+    await loadFull(engine);
+}, []);
+
+const particlesLoaded = useCallback(async container => {
+    await console.log(container);
+}, []);
+  
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <Particles options={particlesConfig} init={particlesInit} loaded={particlesLoaded}></Particles>
+     <Home></Home>
     </div>
   );
 }
