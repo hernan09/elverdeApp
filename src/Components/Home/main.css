@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Noto+Sans+Mono:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Noto+Sans+Mono:wght@100;200;300;400;500;600;700&family=Source+Sans+Pro:ital,wght@0,200;0,400;0,700;1,200&display=swap');
 
 .home-contain{
   overflow-x: hidden;
@@ -6,6 +7,7 @@
 }
 .titleapp {
   color: white;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 .load {
   z-index: 1000;
@@ -66,6 +68,7 @@
   border: solid 2px white;
   padding: 0px;
   margin: 3px;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 .venta {
   border-bottom-right-radius: 22px;
@@ -94,9 +97,11 @@
 .title {
   font-weight: 700;
   text-transform: uppercase;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 .title-prom {
   font-size: 16px;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .lowred {
@@ -105,4 +110,11 @@
 
 .higtgreen {
   background-color: green;
+}
+
+.imgtitle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-bottom: -8px;
 }

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './main.css';
+import ImgIcon from '../../assets/images/dolar.jpg';
 
 
 function Home(){
@@ -100,7 +101,7 @@ function Home(){
            {isLoading && <h1 className='load'>Cargando....</h1>}
            {!isLoading && <div className='home-contain'>
             <div className='content-header'>
-                <h2 className='titleapp'>EL VERDE-APP</h2>
+                <h2 className='titleapp'>EL VERDE-APP <img src={ImgIcon} className='imgtitle'/></h2>
             </div>
                 <div className='content-dolarblue'>
                     <h3 className='title blue'>Dolar {DolaBlue}</h3> 
