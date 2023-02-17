@@ -3,6 +3,8 @@ import './main.css';
 import ImgIcon from '../../assets/images/dolar.jpg';
 
 
+
+
 function Home(){
     const [DolaBlue, setDolarBLue] = useState(null);
     const [DolarOfi, setDolarOfi] = useState(null);
@@ -16,6 +18,11 @@ function Home(){
 
     const [averageBlue, setAverageBlue] = useState(null);
     const [averageOfi, setAverageOfi] = useState(null);
+    const [flagBlue, setFLagBlue] = useState(false);
+    const [flagOfi, setFLagOfi] = useState(false);
+    //todavia no esta aplicado
+    // const [variationOfi, setVariationOfi] = useState(null);
+    // const [variationBlue, setVariationBlue] = useState(null);
 
     const url = 'https://api.bluelytics.com.ar/v2/evolution.json?days=4';
 
@@ -59,13 +66,35 @@ function Home(){
     //     }, 1000)
 
     // }
+    // const calculateVaraitionOfi = async () => {
+    //     let variation = await Math.floor((ShellOfi - ShellOfiAfter) / ShellOfiAfter);
+    //     let percentVariation = variation * 100;
+    //     setVariationOfi(percentVariation)
+    // }
+
+    // const calculateVaraitionBlue = async () => {
+    //     let variation = await Math.floor((ShellBlue - ShellBLueAfter) / ShellBLueAfter);
+    //     let percentVariation = variation * 100;
+    //     setVariationBlue(percentVariation)
+    // }
+    // const TransitionAnimationCounter = () => {
+    //    let intervaloTiempo = setInterval(()=>{
+    //         setCounter(counter + 1)
+    //         console.log(counter);
+    //     },100)
+    //     if (counter === 200) {
+    //         clearInterval(intervaloTiempo)
+    //     }
+    // }
 
     const calculateColorAverageBlue = ()=> {
         let divAverageBLue = document.querySelector('.blue-average');
         if (ShellBLueAfter > ShellBlue) {
             divAverageBLue?.classList.add('lowred')
+            setFLagBlue(false);
         } else {
             divAverageBLue?.classList.add('higtgreen')
+            setFLagBlue(true);
         }
     }
 
@@ -74,8 +103,11 @@ function Home(){
         let divAverageOficial = document.querySelector('.oficial-average');
         if (ShellOfiAfter > ShellOfi) {
             divAverageOficial?.classList.add('lowred')
+            setFLagOfi(false)
+            
         } else {
             divAverageOficial?.classList.add('higtgreen')
+            setFLagOfi(true)
         }
     }
 
@@ -101,7 +133,11 @@ function Home(){
            {isLoading && <h1 className='load'>Cargando....</h1>}
            {!isLoading && <div className='home-contain'>
             <div className='content-header'>
-                <h2 className='titleapp'><img src={ImgIcon} className='imgtitle'/> EL VERDE-APP <img src={ImgIcon} className='imgtitle'/></h2>
+                <h2 className='titleapp'>
+                    <img src={ImgIcon} className='imgtitle' alt='...'/>
+                     EL VERDE APP 
+                    <img src={ImgIcon} className='imgtitle' alt='...'/>
+                </h2>
             </div>
                 <div className='content-dolarblue'>
                     <h3 className='title blue'>Dolar {DolaBlue}</h3> 
@@ -114,10 +150,13 @@ function Home(){
                         <h3>Compra</h3>
                         <span className='item-span'>{buyBlue}</span>
                     </div>
-                    {/* hardode por el momento hacer metodo de promedio */}
                     <div className='content-text promedio blue-average'>
                         <h3 className='title-prom'>Promedio</h3>
                         <span className='item-span-prom'>{averageBlue}</span>
+                        <span className='content-arrow-blue'>
+                            {flagBlue && <i className='fas fa-angle-up'></i>}
+                            {!flagBlue && <i className='fas fa-angle-down'></i>}
+                        </span>
                     </div> 
                     
                 </div>
@@ -134,6 +173,10 @@ function Home(){
                     <div className='content-text promedio oficial-average'>
                         <h3 className='title-prom'>Promedio</h3>
                         <span className='item-span-prom'>{averageOfi}</span>
+                        <span className='content-arrow-ofi'>
+                            {flagOfi && <i className='fas fa-angle-up'></i>}
+                            {!flagOfi && <i className='fas fa-angle-down'></i>}
+                        </span>
                     </div> 
                 </div>
            </div>}

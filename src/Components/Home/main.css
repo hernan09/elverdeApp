@@ -9,6 +9,8 @@
   color: white;
   font-family: 'Source Sans Pro', sans-serif;
   color: rgb(87, 85, 85);
+  -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
 .load {
   z-index: 1000;
@@ -119,4 +121,37 @@
   height: 30px;
   border-radius: 50%;
   margin-bottom: -8px;
+}
+.content-arrow-blue {
+  position: absolute;
+  top: 48px;
+}
+.content-arrow-ofi {
+  position: absolute;
+  top: 48px;
+}
+
+@-webkit-keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
 }
