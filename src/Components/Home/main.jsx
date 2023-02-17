@@ -45,22 +45,36 @@ function Home(){
         .catch(err => console.error('error:' + err));
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[ShellBLueAfter,ShellBlue ]);
+    
+
+    // const CalculateTransitionsBLue = (valorBlue) => {
+    //    let intervalCounter = setInterval(()=> {
+    //         setCounterTransition(counterTransition + 1);
+    //         console.log('counter', counterTransition);
+    //         if (counterTransition === valorBlue){
+    //             clearInterval(intervalCounter)
+    //             console.log('se paro el intervalo', counterTransition);
+    //         }
+    //     }, 1000)
+
+    // }
 
     const calculateColorAverageBlue = ()=> {
         let divAverageBLue = document.querySelector('.blue-average');
         if (ShellBLueAfter > ShellBlue) {
-            divAverageBLue.classList.add('lowred')
+            divAverageBLue?.classList.add('lowred')
         } else {
-            divAverageBLue.classList.add('higtgreen')
+            divAverageBLue?.classList.add('higtgreen')
         }
     }
+
 
     const calculateColorAverageOficial = ()=> {
         let divAverageOficial = document.querySelector('.oficial-average');
         if (ShellOfiAfter > ShellOfi) {
-            divAverageOficial.classList.add('lowred')
+            divAverageOficial?.classList.add('lowred')
         } else {
-            divAverageOficial.classList.add('higtgreen')
+            divAverageOficial?.classList.add('higtgreen')
         }
     }
 
@@ -72,7 +86,7 @@ function Home(){
         await calculateColorAverageOficial()
     }
 
-    const calculateAverageBlue =async (precioAyer, precioHoy) => {
+    const calculateAverageBlue = async (precioAyer, precioHoy) => {
         let suma = precioAyer + precioHoy;
         let averageBluee = Math.round(suma / 2);
         console.log('promedio blue', averageBluee);

@@ -88,6 +88,7 @@
   font-family: 'Creepster', cursive;
   font-family: 'Noto Sans Mono', monospace;
   margin-left: 10px;
+  transition: all 3s ease;
 }
 
 .title {
