@@ -1,7 +1,7 @@
 import React from "react";
 import "./footer.css";
 import LinkediIcon from "../../assets/images/linkedin.png";
-import GitIcon from "../../assets/images/git.png";
+import GitIcon from "../../assets/images/github.png";
 
 const footer = () => {
   return (
@@ -12,7 +12,7 @@ const footer = () => {
           <img className="icon-footer" src={LinkediIcon} alt="" />
         </a>
         <a rel="noopener noreferrer" target="_blank" href="https://github.com/hernan09/">
-          <img className="icon-footer" src={GitIcon} alt="" />
+          <img className="icon-footer git" src={GitIcon} alt="" />
         </a>
       </span>
     </div>

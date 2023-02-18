@@ -4,7 +4,6 @@
 .home-contain{
   overflow-x: hidden;
   overflow-y: hidden;
-  min-height: 100vh;
 }
 .titleapp {
   color: white;
@@ -31,6 +30,10 @@
   opacity: 0.8;
   margin: auto;
   position: relative;
+  background-image: url(https://thumbs.dreamstime.com/b/fondo-incons%C3%BAtil-abstracto-del-modelo-fondo-de-d%C3%B3lares-64111929.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .content-dolarofi{
@@ -44,6 +47,7 @@
   opacity: 0.8;
   margin: auto;
   position: relative;
+  
 }
 .content-promedio {
   display: flex;
@@ -73,6 +77,18 @@
   margin: 3px;
   font-family: 'Source Sans Pro', sans-serif;
 }
+
+.box-data {
+  width: 100%;
+  max-width: 700px;
+  margin: auto;
+  min-height: 200px;
+  border-radius: 8px;
+  background-image: url(https://thumbs.dreamstime.com/b/fondo-incons%C3%BAtil-abstracto-del-modelo-fondo-de-d%C3%B3lares-64111929.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 .venta {
   border-bottom-right-radius: 22px;
   border-top-right-radius: 32px
@@ -88,6 +104,7 @@
   justify-content: center;
   position: absolute;
   right: 0;
+  transition: all ease 3s;
 }
 
 .item-span {

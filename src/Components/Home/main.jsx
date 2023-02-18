@@ -181,8 +181,10 @@ function Home(){
                             {!flagOfi && <img className='img-arrow' src={ArrowDown} alt='...'/>}
                         </span>
                     </div> 
+                    
                 </div>
            </div>}
+           {!isLoading && <div className='box-data'></div>}
            {!isLoading && <Footer/>}
         </div>
     );

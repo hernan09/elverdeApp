@@ -6,12 +6,11 @@
   /* margin: auto; */
   right: 0;
   border-radius: 5px;
-  background-color: #dfe1df;
+  background-color: #ffffff;
   /* display: flex; */
   /* border: 2px solid hsl(240deg 7% 97%); */
   opacity: 0.9;
   /* justify-content: space-around; */
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -20,12 +19,17 @@
 }
 
 .content-icons {
-
+  margin-top: 5px;
 }
 
 .icon-footer {
   width: 30px;
   height: 30px;
+}
+.git {
+  width: 25px;
+  height: 25px;
+  margin-bottom: 3px;
 }
 
 .footer-link {
