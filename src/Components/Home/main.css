@@ -131,6 +131,13 @@
   top: 48px;
 }
 
+.img-arrow {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  top: 1px;
+}
+
 @-webkit-keyframes tracking-in-expand {
   0% {
     letter-spacing: -0.5em;

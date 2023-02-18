@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './main.css';
 import ImgIcon from '../../assets/images/dolar.jpg';
+import ArrowUp from '../../assets/images/arrowup.png'
+import ArrowDown from '../../assets/images/arrowdown.png'
 
 
 
@@ -154,8 +156,8 @@ function Home(){
                         <h3 className='title-prom'>Promedio</h3>
                         <span className='item-span-prom'>{averageBlue}</span>
                         <span className='content-arrow-blue'>
-                            {flagBlue && <i className='fas fa-angle-up'></i>}
-                            {!flagBlue && <i className='fas fa-angle-down'></i>}
+                            {flagBlue && <img className='img-arrow' src={ArrowUp} alt='...'/>}
+                            {!flagBlue && <img className='img-arrow' src={ArrowDown} alt='...'/>}
                         </span>
                     </div> 
                     
@@ -174,8 +176,8 @@ function Home(){
                         <h3 className='title-prom'>Promedio</h3>
                         <span className='item-span-prom'>{averageOfi}</span>
                         <span className='content-arrow-ofi'>
-                            {flagOfi && <i className='fas fa-angle-up'></i>}
-                            {!flagOfi && <i className='fas fa-angle-down'></i>}
+                            {flagOfi && <img className='img-arrow' src={ArrowUp} alt='...'/>}
+                            {!flagOfi && <img className='img-arrow' src={ArrowDown} alt='...'/>}
                         </span>
                     </div> 
                 </div>
