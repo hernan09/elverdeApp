@@ -137,7 +137,7 @@
   width: 16px;
   height: 16px;
   position: relative;
-  top: 1px;
+  top: -4px;
 }
 
 @-webkit-keyframes tracking-in-expand {
