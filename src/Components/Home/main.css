@@ -4,6 +4,7 @@
 .home-contain{
   overflow-x: hidden;
   overflow-y: hidden;
+  min-height: 100vh;
 }
 .titleapp {
   color: white;
