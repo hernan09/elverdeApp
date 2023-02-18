@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Footer from '../Footer/footer';
 import './main.css';
 import ImgIcon from '../../assets/images/dolar.jpg';
 import ArrowUp from '../../assets/images/arrowup.png'
@@ -182,6 +183,7 @@ function Home(){
                     </div> 
                 </div>
            </div>}
+           {!isLoading && <Footer/>}
         </div>
     );
 };

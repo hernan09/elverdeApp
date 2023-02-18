@@ -1,5 +1,6 @@
 import './App.css';
 import Home from './Components/Home/main.jsx';
+//import Footer from './Components/Footer/footer.jsx';
 import Particles from "react-tsparticles";
 import particlesConfig from './config/particles';
 import { useCallback } from "react";
@@ -21,6 +22,7 @@ const particlesLoaded = useCallback(async container => {
     <div className="App">
      <Particles options={particlesConfig} init={particlesInit} loaded={particlesLoaded}></Particles>
      <Home></Home>
+     {/* <Footer></Footer> */}
     </div>
   );
 }

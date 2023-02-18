@@ -1,0 +1,28 @@
+.content-footer {
+  position: relative;
+  bottom: 0px;
+  left: 0;
+  padding: 5px;
+  /* margin: auto; */
+  right: 0;
+  border-radius: 5px;
+  background-color: #dfe1df;
+  /* display: flex; */
+  /* border: 2px solid hsl(240deg 7% 97%); */
+  opacity: 0.9;
+  /* justify-content: space-around; */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.icon-footer {
+  width: 30px;
+  height: 30px;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: gray;
+}
