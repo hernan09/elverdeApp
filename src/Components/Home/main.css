@@ -106,6 +106,8 @@
 .title-prom {
   font-size: 16px;
   font-family: 'Source Sans Pro', sans-serif;
+  position: relative;
+  bottom: 12px;
 }
 
 .lowred {
