@@ -162,7 +162,7 @@
   width: 16px;
   height: 16px;
   position: relative;
-  left: 100px;
+  left: 78px;
   top: -2px;
   -webkit-animation: shake-vertical 4s infinite ;
 	animation: shake-vertical 4s infinite ;
@@ -173,7 +173,7 @@
   width: 16px;
   height: 16px;
   position: relative;
-  left: 84px;
+  left: 62px;
   bottom: -7px;
   -webkit-animation: shake-vertical 4s infinite ;
 	animation: shake-vertical 4s infinite ;
