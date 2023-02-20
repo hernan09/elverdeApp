@@ -6,11 +6,16 @@
   overflow-y: hidden;
 }
 .titleapp {
+  padding: 5px;
   color: white;
   font-family: 'Source Sans Pro', sans-serif;
   color: rgb(87, 85, 85);
-  -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-	animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+  background-color: #efefef;
+  animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+  border-radius: 8px;
+  opacity: 0.8;
+  max-width: 700px;
+  margin: auto;
 }
 .load {
   z-index: 1000;
@@ -30,9 +35,8 @@
   opacity: 0.8;
   margin: auto;
   position: relative;
-  background-image: url(https://thumbs.dreamstime.com/b/fondo-incons%C3%BAtil-abstracto-del-modelo-fondo-de-d%C3%B3lares-64111929.jpg);
-  background-size: auto;
-  background-repeat: no-repeat;
+  background-color: white;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
 }
 
 .content-dolarofi{
@@ -46,6 +50,7 @@
   opacity: 0.8;
   margin: auto;
   position: relative;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
   
 }
 .content-promedio {
@@ -86,6 +91,8 @@
   background-image: url(https://thumbs.dreamstime.com/b/fondo-incons%C3%BAtil-abstracto-del-modelo-fondo-de-d%C3%B3lares-64111929.jpg);
   background-size: auto;
   background-repeat: no-repeat;
+  margin-top: 30px;
+  margin-bottom: 30px;
   
 }
 .venta {
