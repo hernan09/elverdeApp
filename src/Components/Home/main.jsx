@@ -27,7 +27,7 @@ function Home(){
     // const [variationOfi, setVariationOfi] = useState(null);
     // const [variationBlue, setVariationBlue] = useState(null);
 
-    const url = 'https://api.bluelytics.com.ar/v2/evolution.json?days=4';
+    const url = 'https://api.bluelytics.com.ar/v2/evolution.json?days=8';
 
     const options = {
     method: 'GET',
@@ -41,8 +41,9 @@ function Home(){
         fetch(url, options)
         .then(res => res.json())
         .then(json => {
-            setShellOfiAfter(json[2].value_sell) // valor venta oficial dia anterior
-            setShellBlueAfter(json[3].value_sell) // valor del blue dia anterior
+            console.log('el json', json);
+            setShellOfiAfter(json[6].value_sell) // valor venta oficial dia anterior
+            setShellBlueAfter(json[7].value_sell) // valor del blue dia anterior
             setDolarBLue(json[1].source); // etiqueta blue
             setShellBlue(json[1].value_sell); // valor de venta blue
             setBuyBlue(json[1].value_buy); // valor de compra blue
@@ -94,9 +95,11 @@ function Home(){
         let divAverageBLue = document.querySelector('.blue-average');
         if (ShellBLueAfter > ShellBlue) {
             divAverageBLue?.classList.add('lowred')
+            divAverageBLue?.classList.remove('higtgreen')
             setFLagBlue(false);
         } else {
             divAverageBLue?.classList.add('higtgreen')
+            divAverageBLue?.classList.remove('lowred')
             setFLagBlue(true);
         }
     }
@@ -116,7 +119,7 @@ function Home(){
 
     const calculateAverageOficial = async (precioAyer, precioHoy) => {
         let suma = precioAyer + precioHoy;
-        let averageOficiall = Math.round(suma / 2);
+        let averageOficiall = suma / 2;
         console.log('promedio oficial', averageOficiall);
         setAverageOfi(averageOficiall);
         await calculateColorAverageOficial()
@@ -124,7 +127,7 @@ function Home(){
 
     const calculateAverageBlue = async (precioAyer, precioHoy) => {
         let suma = precioAyer + precioHoy;
-        let averageBluee = Math.round(suma / 2);
+        let averageBluee = suma / 2;
         console.log('promedio blue', averageBluee);
         setAverageBlue(averageBluee);
         await calculateColorAverageBlue()
@@ -154,7 +157,7 @@ function Home(){
                         <span className='item-span'>{buyBlue}</span>
                     </div>
                     <div className='content-text promedio blue-average'>
-                        <h3 className='title-prom'>Promedio de un dia</h3>
+                        <h3 className='title-prom'>Promedio por semana</h3>
                         <span className='item-span-prom'>{averageBlue}</span>
                         <span className='content-arrow-blue'>
                             {flagBlue && <img className='img-arrow' src={ArrowUp} alt='...'/>}
@@ -176,7 +179,7 @@ function Home(){
                         <span className='item-span'>{buyOfi}</span>
                     </div>  
                     <div className='content-text promedio oficial-average'>
-                        <h3 className='title-prom'>Promedio de un dia</h3>
+                        <h3 className='title-prom'>Promedio por semana</h3>
                         <span className='item-span-prom'>{averageOfi}</span>
                         <span className='content-arrow-ofi'>
                             {flagOfi && <img className='img-arrow' src={ArrowUp} alt='...'/>}
