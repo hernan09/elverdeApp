@@ -159,6 +159,8 @@ function Home(){
                         <span className='content-arrow-blue'>
                             {flagBlue && <img className='img-arrow' src={ArrowUp} alt='...'/>}
                             {!flagBlue && <img className='img-arrow' src={ArrowDown} alt='...'/>}
+                            {flagBlue && <img className='img-arrow-two' src={ArrowUp} alt='...'/>}
+                            {!flagBlue && <img className='img-arrow-two' src={ArrowDown} alt='...'/>}
                         </span>
                     </div> 
                     
@@ -179,6 +181,8 @@ function Home(){
                         <span className='content-arrow-ofi'>
                             {flagOfi && <img className='img-arrow' src={ArrowUp} alt='...'/>}
                             {!flagOfi && <img className='img-arrow' src={ArrowDown} alt='...'/>}
+                            {flagOfi && <img className='img-arrow-two' src={ArrowUp} alt='...'/>}
+                            {!flagOfi && <img className='img-arrow-two' src={ArrowDown} alt='...'/>}
                         </span>
                     </div> 
                     

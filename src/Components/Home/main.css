@@ -91,11 +91,11 @@
 }
 .venta {
   border-bottom-right-radius: 22px;
-  border-top-right-radius: 32px
+  
 }
 
 .promedio {
-  border-radius: 100%;
+  /* border-radius: 100%;
   width: 100px;
   height: 100px;
   display: flex;
@@ -104,7 +104,11 @@
   justify-content: center;
   position: absolute;
   right: 0;
-  transition: all ease 3s;
+  transition: all ease 3s; */
+}
+.item-span-prom {
+  position: relative;
+  left: 50px;
 }
 
 .item-span {
@@ -121,10 +125,8 @@
   color: rgb(42 40 40);;
 }
 .title-prom {
-  font-size: 16px;
   font-family: 'Source Sans Pro', sans-serif;
-  position: relative;
-  bottom: 12px;
+  
 }
 
 .lowred {
@@ -132,7 +134,7 @@
 }
 
 .higtgreen {
-  background-color: green;
+  background-color: #407a40;
 }
 
 .imgtitle {
@@ -142,19 +144,31 @@
   margin-bottom: -8px;
 }
 .content-arrow-blue {
-  position: absolute;
-  top: 48px;
+ 
 }
 .content-arrow-ofi {
-  position: absolute;
-  top: 48px;
+ 
 }
 
 .img-arrow {
   width: 16px;
   height: 16px;
   position: relative;
-  top: -4px;
+  left: 100px;
+  top: -2px;
+  -webkit-animation: shake-vertical 4s infinite ;
+	animation: shake-vertical 4s infinite ;
+  
+}
+
+.img-arrow-two {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  left: 84px;
+  bottom: -7px;
+  -webkit-animation: shake-vertical 4s infinite ;
+	animation: shake-vertical 4s infinite ;
 }
 
 @-webkit-keyframes tracking-in-expand {
@@ -179,5 +193,67 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+/**
+ * ----------------------------------------
+ * animation shake-vertical
+ * ----------------------------------------
+ */
+ @-webkit-keyframes shake-vertical {
+  0%,
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translateY(-8px);
+            transform: translateY(-8px);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: translateY(8px);
+            transform: translateY(8px);
+  }
+  80% {
+    -webkit-transform: translateY(6.4px);
+            transform: translateY(6.4px);
+  }
+  90% {
+    -webkit-transform: translateY(-6.4px);
+            transform: translateY(-6.4px);
+  }
+}
+@keyframes shake-vertical {
+  0%,
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translateY(-8px);
+            transform: translateY(-8px);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: translateY(8px);
+            transform: translateY(8px);
+  }
+  80% {
+    -webkit-transform: translateY(6.4px);
+            transform: translateY(6.4px);
+  }
+  90% {
+    -webkit-transform: translateY(-6.4px);
+            transform: translateY(-6.4px);
   }
 }
