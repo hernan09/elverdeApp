@@ -27,12 +27,12 @@ function Home(){
     // const [variationOfi, setVariationOfi] = useState(null);
     // const [variationBlue, setVariationBlue] = useState(null);
 
-    const url = 'https://api.bluelytics.com.ar/v2/evolution.json?days=8';
+    const url = process.env.REACT_APP_API_BASE_URL;
 
     const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': 'e62397dea2msh462a64157ba5258p1ad146jsn76daf54e422c',
+        'X-RapidAPI-Key': process.env.REACT_APP_API_BASE_KEY,
         'X-RapidAPI-Host': 'dolarapi.p.rapidapi.com'
     }
     };
