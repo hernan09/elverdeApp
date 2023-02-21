@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Footer from '../Footer/footer';
+import BarChart from '../Barchars/barchars';
 import './main.css';
 import ImgIcon from '../../assets/images/dolar.jpg';
 import ArrowUp from '../../assets/images/arrowup.png'
 import ArrowDown from '../../assets/images/arrowdown.png'
+
 
 
 
@@ -23,6 +25,9 @@ function Home(){
     const [averageOfi, setAverageOfi] = useState(null);
     const [flagBlue, setFLagBlue] = useState(false);
     const [flagOfi, setFLagOfi] = useState(false);
+    const [data, setData] = useState(null);
+    const [newData, setNewData] = useState([]);
+    
     //todavia no esta aplicado
     // const [variationOfi, setVariationOfi] = useState(null);
     // const [variationBlue, setVariationBlue] = useState(null);
@@ -41,9 +46,10 @@ function Home(){
         fetch(url, options)
         .then(res => res.json())
         .then(json => {
+            setData(json);
             console.log('el json', json);
-            setShellOfiAfter(json[6].value_sell) // valor venta oficial dia anterior
-            setShellBlueAfter(json[7].value_sell) // valor del blue dia anterior
+            setShellOfiAfter(json[2].value_sell) // valor venta oficial dia anterior
+            setShellBlueAfter(json[3].value_sell) // valor del blue dia anterior
             setDolarBLue(json[1].source); // etiqueta blue
             setShellBlue(json[1].value_sell); // valor de venta blue
             setBuyBlue(json[1].value_buy); // valor de compra blue
@@ -52,11 +58,28 @@ function Home(){
             setBuyOfi(json[0].value_buy); // valor de compra oficial
             calculateAverageBlue(ShellBLueAfter, ShellBlue);
             calculateAverageOficial(ShellOfiAfter, ShellOfi)
+            CalculateGrowthBlue()
             setIsLoading(false);
         })
         .catch(err => console.error('error:' + err));
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[ShellBLueAfter,ShellBlue ]);
+
+    const CalculateGrowthBlue = () => {
+        let newDataArray = [];
+        data?.map(element => {
+            if (element.source === 'Blue') {
+                newDataArray.push({
+                    Fecha: element.date.split('-').reverse().join('/'),
+                    Valor: element.value_sell
+                })
+
+                setNewData(newDataArray)
+            }
+            return newData;
+        });
+    } 
+
     
 
     // const CalculateTransitionsBLue = (valorBlue) => {
@@ -157,7 +180,7 @@ function Home(){
                         <span className='item-span'>{buyBlue}</span>
                     </div>
                     <div className='content-text promedio blue-average'>
-                        <h3 className='title-prom'>Promedio por semana</h3>
+                        <h3 className='title-prom'>Promedio 1 dia</h3>
                         <span className='item-span-prom'>{averageBlue}</span>
                         <span className='content-arrow-blue'>
                             {flagBlue && <img className='img-arrow' src={ArrowUp} alt='...'/>}
@@ -179,7 +202,7 @@ function Home(){
                         <span className='item-span'>{buyOfi}</span>
                     </div>  
                     <div className='content-text promedio oficial-average'>
-                        <h3 className='title-prom'>Promedio por semana</h3>
+                        <h3 className='title-prom'>Promedio 1 dia</h3>
                         <span className='item-span-prom'>{averageOfi}</span>
                         <span className='content-arrow-ofi'>
                             {flagOfi && <img className='img-arrow' src={ArrowUp} alt='...'/>}
@@ -191,7 +214,9 @@ function Home(){
                     
                 </div>
            </div>}
-           {!isLoading && <div className='box-data'></div>}
+           {!isLoading && <div className='box-data'>
+            <BarChart data={newData}></BarChart>
+            </div>}
            {!isLoading && <Footer/>}
         </div>
     );
