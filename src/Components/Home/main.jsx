@@ -56,8 +56,8 @@ function Home(){
             setDolarOfi(json[0].source); // etiqueta Oficial
             setShellOfi(json[0].value_sell); // valor de venta oficial
             setBuyOfi(json[0].value_buy); // valor de compra oficial
-            calculateAverageBlue(ShellBLueAfter, ShellBlue);
-            calculateAverageOficial(ShellOfiAfter, ShellOfi)
+            calculateAverageBlue(buyBlue, ShellBlue);
+            calculateAverageOficial(buyOfi, ShellOfi)
             CalculateGrowthBlue()
             setIsLoading(false);
         })
@@ -180,7 +180,7 @@ function Home(){
                         <span className='item-span'>{buyBlue}</span>
                     </div>
                     <div className='content-text promedio blue-average'>
-                        <h3 className='title-prom'>Promedio 1 dia</h3>
+                        <h3 className='title-prom'>Promedio</h3>
                         <span className='item-span-prom'>{averageBlue}</span>
                         <span className='content-arrow-blue'>
                             {flagBlue && <img className='img-arrow' src={ArrowUp} alt='...'/>}
@@ -202,7 +202,7 @@ function Home(){
                         <span className='item-span'>{buyOfi}</span>
                     </div>  
                     <div className='content-text promedio oficial-average'>
-                        <h3 className='title-prom'>Promedio 1 dia</h3>
+                        <h3 className='title-prom'>Promedio</h3>
                         <span className='item-span-prom'>{averageOfi}</span>
                         <span className='content-arrow-ofi'>
                             {flagOfi && <img className='img-arrow' src={ArrowUp} alt='...'/>}
