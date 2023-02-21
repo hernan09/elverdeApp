@@ -10,7 +10,6 @@
   color: white;
   font-family: 'Source Sans Pro', sans-serif;
   color: rgb(87, 85, 85);
-  background-color: #efefef;
   animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
   border-radius: 8px;
   opacity: 0.8;
@@ -124,7 +123,10 @@
   font-weight: 700;
   text-transform: uppercase;
   font-family: 'Source Sans Pro', sans-serif;
-  color: rgb(42 40 40);;
+  color: rgb(42 40 40);
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+  padding: 10px;
+  border-radius: 8px;
 }
 .title-prom {
   font-family: 'Source Sans Pro', sans-serif;
