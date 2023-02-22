@@ -3,12 +3,12 @@
   "name": "EL VERDE",
   "icons": [
     {
-      "src": "dolar192.png",
+      "src": "assets/images/dolar192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "dolar512.png",
+      "src": "assets/images/dolar512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
