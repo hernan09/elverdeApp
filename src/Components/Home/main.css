@@ -5,6 +5,16 @@
   overflow-x: hidden;
   overflow-y: hidden;
 }
+
+@media (min-width:700px) {
+  .home-contain {
+    display: flex;
+    overflow-y: hidden;
+    max-width: 700px;
+    margin: auto;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+  }
+}
 .titleapp {
   padding: 5px;
   color: white;
@@ -76,6 +86,8 @@
   padding: 0px;
   margin: 3px;
   font-family: 'Source Sans Pro', sans-serif;
+  width: 300px;
+  margin: auto;
 }
 
 .box-data {

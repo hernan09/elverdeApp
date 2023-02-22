@@ -6,7 +6,7 @@ const barchars = ({data}) => {
     console.log('la data', data);
     return (
         <div className='content-barchar'>
-            <ResponsiveContainer width={'90%'} aspect={2}>
+            <ResponsiveContainer width={'90%'} aspect={1.5}>
                 <LineChart 
                 data={data}
                 width="300px"
@@ -18,7 +18,7 @@ const barchars = ({data}) => {
                     left:5
                 }}>
                 <CartesianGrid strokeDasharray="4 2"/>
-                <XAxis dataKey='Fecha' domain={['dataMin', 'dataMax']} interval={"preserveStart"} allowDataOverflow={true} reversed={true} tick={{stroke: '#5c645b', strokeWidth: 0}}/>
+                <XAxis dataKey='Fecha' interval={"preserveStart"} allowDataOverflow={true} reversed={true} tick={{stroke: '#5c645b', strokeWidth: 0}}/>
                 <YAxis dataKey='Valor'/>
                 <Tooltip active={true} cursor={{ stroke: '#407a40', strokeWidth: 2 }}  wrapperStyle={{outline: 'none'}}/>
                 <Legend verticalAlign="top" height={36}/>

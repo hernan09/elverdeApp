@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Footer from '../Footer/footer';
 import BarChart from '../Barchars/barchars';
+import Header from '../Header/header';
 import './main.css';
-import ImgIcon from '../../assets/images/dolar.jpg';
 import ArrowUp from '../../assets/images/arrowup.png'
 import ArrowDown from '../../assets/images/arrowdown.png'
 
@@ -160,14 +160,8 @@ function Home(){
     return (
         <div>
            {isLoading && <h1 className='load'>Cargando....</h1>}
+           {!isLoading && <Header/>}
            {!isLoading && <div className='home-contain'>
-            <div className='content-header'>
-                <h2 className='titleapp'>
-                    <img src={ImgIcon} className='imgtitle' alt='...'/>
-                     EL VERDE APP 
-                    <img src={ImgIcon} className='imgtitle' alt='...'/>
-                </h2>
-            </div>
                 <div className='content-dolarblue'>
                     <h3 className='title blue'>Dolar {DolaBlue}</h3> 
                     {/* hacer metodo que afecte ambas box con icono de flecita que muestre si aumento o subio */}
