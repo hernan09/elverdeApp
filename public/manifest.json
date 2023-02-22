@@ -1,11 +1,21 @@
 {
   "short_name": "EL VERDE",
-  "name": "EL VERDE",
+  "name": "VERDE",
   "icons": [
     {
-      "src": "dolar192.jpg",
-      "type": "image/jpg",
-      "sizes": "192x192"
+      "src": "16x16.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "48x48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "128x128.png",
+      "type": "image/png",
+      "sizes": "128x128"
     },
     {
       "src": "dolar512.jpg",
@@ -15,6 +25,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "green",
-  "background_color": "green"
+  "theme_color": "#145a12",
+  "background_color": "#145a12"
 }
