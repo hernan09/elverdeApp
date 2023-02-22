@@ -109,7 +109,7 @@
 }
 .item-span-prom {
   position: relative;
-  left: 50px;
+  left: 47px;
   font-weight: 700;
   font-size: 18px;
 }
@@ -129,6 +129,8 @@
 }
 .title-prom {
   font-family: 'Source Sans Pro', sans-serif;
+  position: relative;
+  left: 18px;
   
 }
 
