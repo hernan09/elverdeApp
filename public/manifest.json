@@ -3,18 +3,18 @@
   "name": "EL VERDE",
   "icons": [
     {
-      "src": "assets/images/dolar192.png",
-      "type": "image/png",
+      "src": "dolar192.jpg",
+      "type": "image/jpg",
       "sizes": "192x192"
     },
     {
-      "src": "assets/images/dolar512.png",
-      "type": "image/png",
+      "src": "dolar512.jpg",
+      "type": "image/jpg",
       "sizes": "512x512"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#145a12",
-  "background_color": "#145a12"
+  "theme_color": "green",
+  "background_color": "green"
 }

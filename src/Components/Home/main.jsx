@@ -141,8 +141,8 @@ function Home(){
     }
 
     const calculateAverageOficial = async (precioAyer, precioHoy) => {
-        let suma = precioAyer + precioHoy;
-        let averageOficiall = suma / 2;
+        let suma = Math.floor(precioAyer + precioHoy);
+        let averageOficiall = Math.floor(suma / 2);
         console.log('promedio oficial', averageOficiall);
         setAverageOfi(averageOficiall);
         await calculateColorAverageOficial()
@@ -150,7 +150,7 @@ function Home(){
 
     const calculateAverageBlue = async (precioAyer, precioHoy) => {
         let suma = precioAyer + precioHoy;
-        let averageBluee = suma / 2;
+        let averageBluee = Math.floor(suma / 2);
         console.log('promedio blue', averageBluee);
         setAverageBlue(averageBluee);
         await calculateColorAverageBlue()
