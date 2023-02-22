@@ -15,17 +15,7 @@
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
   }
 }
-.titleapp {
-  padding: 5px;
-  color: white;
-  font-family: 'Source Sans Pro', sans-serif;
-  color: rgb(87, 85, 85);
-  animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-  border-radius: 8px;
-  opacity: 0.8;
-  max-width: 700px;
-  margin: auto;
-}
+
 .load {
   z-index: 1000;
   color: white;
@@ -182,31 +172,6 @@
   bottom: -7px;
   -webkit-animation: shake-vertical 4s infinite ;
 	animation: shake-vertical 4s infinite ;
-}
-
-@-webkit-keyframes tracking-in-expand {
-  0% {
-    letter-spacing: -0.5em;
-    opacity: 0;
-  }
-  40% {
-    opacity: 0.6;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes tracking-in-expand {
-  0% {
-    letter-spacing: -0.5em;
-    opacity: 0;
-  }
-  40% {
-    opacity: 0.6;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 /**
