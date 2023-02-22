@@ -10,7 +10,7 @@
     margin: auto;
 }
 
-@media(max-width:400px){
+@media(max-width:425px){
     .titleapp{
         margin-left: 7px;
     }
