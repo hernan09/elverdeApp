@@ -23,7 +23,7 @@ const barchars = ({data}) => {
                 <Tooltip active cursor={{ stroke: '#407a40', strokeWidth: 2 }}  wrapperStyle={{outline: 'none'}}/>
                 <Legend verticalAlign="top" height={36}/>
                 <Line type="monotone" name='Fecha'  dataKey='Fecha'stroke="#6f7a6f"/>
-                <Line type="monotone" name='Variacion del Dolar BLue'  dataKey='Valor'stroke="#407a40"/>
+                <Line type="monotone" name='Valor Dolar BLue'  dataKey='Valor'stroke="#407a40"/>
                 </LineChart>
             </ResponsiveContainer>
         </div>
