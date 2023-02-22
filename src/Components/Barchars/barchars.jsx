@@ -20,7 +20,7 @@ const barchars = ({data}) => {
                 <CartesianGrid strokeDasharray="4 2"/>
                 <XAxis dataKey='Fecha' interval={"preserveStart"} allowDataOverflow={true} reversed={true} tick={{stroke: '#5c645b', strokeWidth: 0}}/>
                 <YAxis dataKey='Valor'/>
-                <Tooltip active={true} cursor={{ stroke: '#407a40', strokeWidth: 2 }}  wrapperStyle={{outline: 'none'}}/>
+                <Tooltip active cursor={{ stroke: '#407a40', strokeWidth: 2 }}  wrapperStyle={{outline: 'none'}}/>
                 <Legend verticalAlign="top" height={36}/>
                 <Line type="monotone"  dataKey='Fecha'stroke="#6f7a6f"/>
                 <Line type="monotone"  dataKey='Valor'stroke="#407a40"/>
