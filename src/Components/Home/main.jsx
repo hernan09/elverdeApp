@@ -83,27 +83,6 @@ function Home(){
     } 
 
 
-    // const calculateVaraitionOfi = async () => {
-    //     let variation = await Math.floor((ShellOfi - ShellOfiAfter) / ShellOfiAfter);
-    //     let percentVariation = variation * 100;
-    //     setVariationOfi(percentVariation)
-    // }
-
-    // const calculateVaraitionBlue = async () => {
-    //     let variation = await Math.floor((ShellBlue - ShellBLueAfter) / ShellBLueAfter);
-    //     let percentVariation = variation * 100;
-    //     setVariationBlue(percentVariation)
-    // }
-    // const TransitionAnimationCounter = () => {
-    //    let intervaloTiempo = setInterval(()=>{
-    //         setCounter(counter + 1)
-    //         console.log(counter);
-    //     },100)
-    //     if (counter === 200) {
-    //         clearInterval(intervaloTiempo)
-    //     }
-    // }
-
     const calculateColorAverageBlue = ()=> {
         let divAverageBLue = document.querySelector('.blue-average');
         if (ShellBLueAfter > ShellBlue) {
@@ -159,7 +138,7 @@ function Home(){
                         <h3>Venta</h3>
                         <span className='item-span'>{ShellBlue}</span>
                     </div>
-                    <div className='content-text'>
+                    <div className='content-text compra'>
                         <h3>Compra</h3>
                         <span className='item-span'>{buyBlue}</span>
                     </div>
@@ -181,7 +160,7 @@ function Home(){
                         <h3>Venta</h3>
                         <span className='item-span'>{ShellOfi}</span>
                     </div>
-                    <div className='content-text'>
+                    <div className='content-text compra'>
                         <h3>Compra</h3>
                         <span className='item-span'>{buyOfi}</span>
                     </div>  
