@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import CountUp from 'react-countup';
 import Footer from '../Footer/footer';
 import BarChart from '../Barchars/barchars';
 import Header from '../Header/header';
+//import Weather from '../Weather/weather';
 import './main.css';
 import ArrowUp from '../../assets/images/arrowup.png'
 import ArrowDown from '../../assets/images/arrowdown.png'
@@ -47,7 +49,6 @@ function Home(){
         .then(res => res.json())
         .then(json => {
             setData(json);
-            console.log('el json', json);
             setShellOfiAfter(json[2].value_sell) // valor venta oficial dia anterior
             setShellBlueAfter(json[3].value_sell) // valor del blue dia anterior
             setDolarBLue(json[1].source); // etiqueta blue
@@ -58,12 +59,13 @@ function Home(){
             setBuyOfi(json[0].value_buy); // valor de compra oficial
             calculateAverageBlue(buyBlue, ShellBlue);
             calculateAverageOficial(buyOfi, ShellOfi)
-            CalculateGrowthBlue()
+            CalculateGrowthBlue(averageBlue)
             setIsLoading(false);
         })
         .catch(err => console.error('error:' + err));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[ShellBLueAfter,ShellBlue ]);
+    },[ShellBlue,ShellOfi]);
+
 
     const CalculateGrowthBlue = () => {
         let newDataArray = [];
@@ -80,19 +82,7 @@ function Home(){
         });
     } 
 
-    
 
-    // const CalculateTransitionsBLue = (valorBlue) => {
-    //    let intervalCounter = setInterval(()=> {
-    //         setCounterTransition(counterTransition + 1);
-    //         console.log('counter', counterTransition);
-    //         if (counterTransition === valorBlue){
-    //             clearInterval(intervalCounter)
-    //             console.log('se paro el intervalo', counterTransition);
-    //         }
-    //     }, 1000)
-
-    // }
     // const calculateVaraitionOfi = async () => {
     //     let variation = await Math.floor((ShellOfi - ShellOfiAfter) / ShellOfiAfter);
     //     let percentVariation = variation * 100;
@@ -175,7 +165,7 @@ function Home(){
                     </div>
                     <div className='content-text promedio blue-average'>
                         <h3 className='title-prom'>Promedio</h3>
-                        <span className='item-span-prom'>{averageBlue}</span>
+                        <span className='item-span-prom'>{<CountUp end={averageBlue} duration={2}/>}</span>
                         <span className='content-arrow-blue'>
                             {flagBlue && <img className='img-arrow' src={ArrowUp} alt='...'/>}
                             {!flagBlue && <img className='img-arrow' src={ArrowDown} alt='...'/>}
@@ -197,7 +187,7 @@ function Home(){
                     </div>  
                     <div className='content-text promedio oficial-average'>
                         <h3 className='title-prom'>Promedio</h3>
-                        <span className='item-span-prom'>{averageOfi}</span>
+                        <span className='item-span-prom'>{<CountUp end={averageOfi} duration={2}/>}</span>
                         <span className='content-arrow-ofi'>
                             {flagOfi && <img className='img-arrow' src={ArrowUp} alt='...'/>}
                             {!flagOfi && <img className='img-arrow' src={ArrowDown} alt='...'/>}
