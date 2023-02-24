@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import CountUp from 'react-countup';
 import Footer from '../Footer/footer';
 import BarChart from '../Barchars/barchars';
+import Piechars from '../Piechars/piechars';
 import Header from '../Header/header';
 //import Weather from '../Weather/weather';
 import './main.css';
@@ -180,6 +181,7 @@ function Home(){
            {!isLoading && <div className='box-data'>
             <BarChart data={newData}></BarChart>
             </div>}
+            {!isLoading && <Piechars data={newData}/>}
            {!isLoading && <Footer/>}
         </div>
     );
