@@ -1,8 +1,8 @@
 import React from 'react';
-import './barchars.css';
+import './linechar.css';
 import { LineChart, ResponsiveContainer, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Line } from 'recharts';
 
-const barchars = ({data}) => {
+const Linechar = ({data}) => {
     console.log('la data', data);
     return (
         <div className='content-barchar'>
@@ -30,4 +30,4 @@ const barchars = ({data}) => {
     );
 };
 
-export default barchars;
+export default Linechar;

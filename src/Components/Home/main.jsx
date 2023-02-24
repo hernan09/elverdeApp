@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import CountUp from 'react-countup';
 import Footer from '../Footer/footer';
-import BarChart from '../Barchars/barchars';
-import Piechars from '../Piechars/piechars';
+import LInechart from '../Linechar/linechar';
+import Barchar from '../Barchar/barchar';
 import Header from '../Header/header';
 //import Weather from '../Weather/weather';
 import './main.css';
@@ -179,9 +179,9 @@ function Home(){
                 </div>
            </div>}
            {!isLoading && <div className='box-data'>
-            <BarChart data={newData}></BarChart>
+            <LInechart data={newData}/>
             </div>}
-            {!isLoading && <Piechars data={newData}/>}
+            {!isLoading && <Barchar data={newData}/>}
            {!isLoading && <Footer/>}
         </div>
     );
