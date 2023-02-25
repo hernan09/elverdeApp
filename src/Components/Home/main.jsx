@@ -137,11 +137,11 @@ function Home(){
                     {/* hacer metodo que afecte ambas box con icono de flecita que muestre si aumento o subio */}
                     <div className='content-text venta'>
                         <h3>Venta</h3>
-                        <span className='item-span'>{ShellBlue}</span>
+                        <span className='item-span'>{<CountUp end={ShellBlue} duration={2}/>}</span>
                     </div>
                     <div className='content-text compra'>
                         <h3>Compra</h3>
-                        <span className='item-span'>{buyBlue}</span>
+                        <span className='item-span'>{<CountUp end={buyBlue} duration={2}/>}</span>
                     </div>
                     <div className='content-text promedio blue-average'>
                         <h3 className='title-prom'>Promedio</h3>
@@ -159,11 +159,11 @@ function Home(){
                     <h3 className='title ofi'>Dolar {DolarOfi}</h3>
                     <div className='content-text venta'>
                         <h3>Venta</h3>
-                        <span className='item-span'>{ShellOfi}</span>
+                        <span className='item-span'>{<CountUp end={ShellOfi} duration={2}/>}</span>
                     </div>
                     <div className='content-text compra'>
                         <h3>Compra</h3>
-                        <span className='item-span'>{buyOfi}</span>
+                        <span className='item-span'>{<CountUp end={buyOfi} duration={2}/>}</span>
                     </div>  
                     <div className='content-text promedio oficial-average'>
                         <h3 className='title-prom'>Promedio</h3>
