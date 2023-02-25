@@ -9,10 +9,10 @@ const Barchar = ({data}) => {
             <ResponsiveContainer width={'90%'} aspect={1.5}>
             <BarChart width={300} height={200} data={data}>
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="Fecha" reversed={true} interval={"preserveStart"} allowDataOverflow={true}/>
+                <XAxis dataKey="Fecha" reversed={true} height={56} interval={"preserveStart"} allowDataOverflow={true}/>
                 <YAxis dataKey="Valor"/>
                 <Tooltip  wrapperStyle={{outline: 'none'}}/>
-                <Legend  verticalAlign="top"/>
+                <Legend  verticalAlign="top" height={36} iconType="line"/>
                 <Bar dataKey="Fecha" name='Fecha' fill="#6f7a6f" />
                 <Bar dataKey="Valor" name='Valor Dolar BLue' fill="#407a40" />
             </BarChart>
