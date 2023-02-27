@@ -3,7 +3,6 @@ import './linechar.css';
 import { LineChart, ResponsiveContainer, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Line } from 'recharts';
 
 const Linechar = ({data}) => {
-    console.log('la data', data);
     return (
         <div className='content-barchar'>
             <ResponsiveContainer width={'90%'} aspect={1.5}>

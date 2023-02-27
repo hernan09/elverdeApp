@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import CountUp from 'react-countup';
 import Footer from '../Footer/footer';
 import LInechart from '../Linechar/linechar';
+import Piechar from '../Piechar/piechar';
 import Barchar from '../Barchar/barchar';
 import Header from '../Header/header';
 //import Weather from '../Weather/weather';
@@ -113,7 +114,6 @@ function Home(){
     const calculateAverageOficial = async (precioAyer, precioHoy) => {
         let suma = Math.floor(precioAyer + precioHoy);
         let averageOficiall = Math.floor(suma / 2);
-        console.log('promedio oficial', averageOficiall);
         setAverageOfi(averageOficiall);
         await calculateColorAverageOficial()
     }
@@ -121,7 +121,6 @@ function Home(){
     const calculateAverageBlue = async (precioAyer, precioHoy) => {
         let suma = precioAyer + precioHoy;
         let averageBluee = Math.floor(suma / 2);
-        console.log('promedio blue', averageBluee);
         setAverageBlue(averageBluee);
         await calculateColorAverageBlue()
     }
@@ -145,7 +144,7 @@ function Home(){
                     </div>
                     <div className='content-text promedio blue-average'>
                         <h3 className='title-prom'>Promedio</h3>
-                        <span className='item-span-prom'>{<CountUp end={averageBlue} duration={2}/>}</span>
+                        <span className='item-span-prom'>{<CountUp end={averageBlue} duration={1.6}/>}</span>
                         <span className='content-arrow-blue'>
                             {flagBlue && <img className='img-arrow' src={ArrowUp} alt='...'/>}
                             {!flagBlue && <img className='img-arrow' src={ArrowDown} alt='...'/>}
@@ -167,7 +166,7 @@ function Home(){
                     </div>  
                     <div className='content-text promedio oficial-average'>
                         <h3 className='title-prom'>Promedio</h3>
-                        <span className='item-span-prom'>{<CountUp end={averageOfi} duration={2}/>}</span>
+                        <span className='item-span-prom'>{<CountUp end={averageOfi} duration={1.6}/>}</span>
                         <span className='content-arrow-ofi'>
                             {flagOfi && <img className='img-arrow' src={ArrowUp} alt='...'/>}
                             {!flagOfi && <img className='img-arrow' src={ArrowDown} alt='...'/>}
@@ -182,6 +181,7 @@ function Home(){
             <LInechart data={newData}/>
             </div>}
             {!isLoading && <Barchar data={newData}/>}
+            {/* {!isLoading && <Piechar data={newData}/>} */}
            {!isLoading && <Footer/>}
         </div>
     );

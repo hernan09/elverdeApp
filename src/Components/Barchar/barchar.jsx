@@ -3,7 +3,6 @@ import { BarChart, CartesianGrid, ResponsiveContainer,  Tooltip,  XAxis, YAxis, 
 import './barchar.css';
 
 const Barchar = ({data}) => {
-    console.log('pie',data);
     return (
         <div className='content-barchart'>
             <ResponsiveContainer width={'90%'} aspect={1.5}>
