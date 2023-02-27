@@ -13,7 +13,7 @@ const Barchar = ({data}) => {
                 <Tooltip  wrapperStyle={{outline: 'none'}}/>
                 <Legend  verticalAlign="top" height={36} iconType="line"/>
                 <Bar dataKey="Fecha" name='Fecha' fill="#6f7a6f" />
-                <Bar dataKey="Valor" name='Valor Dolar BLue' fill="#407a40" />
+                <Bar dataKey="Valor" name='Valor Dolar Oficial' fill="#407a40" />
             </BarChart>
             </ResponsiveContainer>
         </div>

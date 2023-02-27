@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import CountUp from 'react-countup';
 import Footer from '../Footer/footer';
 import LInechart from '../Linechar/linechar';
-import Piechar from '../Piechar/piechar';
 import Barchar from '../Barchar/barchar';
 import Header from '../Header/header';
 //import Weather from '../Weather/weather';
@@ -31,6 +30,7 @@ function Home(){
     const [flagOfi, setFLagOfi] = useState(false);
     const [data, setData] = useState(null);
     const [newData, setNewData] = useState([]);
+    const [newDataOfi, setNewDataOfi] = useState([]);
     
     //todavia no esta aplicado
     // const [variationOfi, setVariationOfi] = useState(null);
@@ -71,7 +71,14 @@ function Home(){
 
     const CalculateGrowthBlue = () => {
         let newDataArray = [];
+        let newDataArrayOfi = [];
         data?.map(element => {
+            if (element.source === 'Oficial') {
+                newDataArrayOfi.push({
+                    Fecha: element.date.split('-').reverse().join('/'),
+                    Valor:element.value_sell
+                })
+            }
             if (element.source === 'Blue') {
                 newDataArray.push({
                     Fecha: element.date.split('-').reverse().join('/'),
@@ -79,8 +86,9 @@ function Home(){
                 })
 
                 setNewData(newDataArray)
+                setNewDataOfi(newDataArrayOfi)
             }
-            return newData;
+            return newData, newDataOfi;
         });
     } 
 
@@ -180,7 +188,7 @@ function Home(){
            {!isLoading && <div className='box-data'>
             <LInechart data={newData}/>
             </div>}
-            {!isLoading && <Barchar data={newData}/>}
+            {!isLoading && <Barchar data={newDataOfi}/>}
             {/* {!isLoading && <Piechar data={newData}/>} */}
            {!isLoading && <Footer/>}
         </div>
