@@ -17,12 +17,12 @@ const Linechar = ({data}) => {
                     left:5
                 }}>
                 <CartesianGrid strokeDasharray="4 2"/>
-                <XAxis dataKey='Fecha' height={56} interval={"preserveStart"} allowDataOverflow={true} reversed={true} tick={{stroke: '#151615', strokeWidth: 0}}/>
+                <XAxis dataKey='Fecha' height={56} interval={"preserveStart"} allowDataOverflow={true} reversed={true} tick={{stroke: '#494948', strokeWidth: 0}}/>
                 <YAxis dataKey='Valor'/>
-                <Tooltip active cursor={{ stroke: '#151615', strokeWidth: 2 }}  wrapperStyle={{outline: 'none'}}/>
+                <Tooltip active cursor={{ stroke: '#494948', strokeWidth: 2 }}  wrapperStyle={{outline: 'none'}}/>
                 <Legend verticalAlign="top" height={36} iconType="plainline"/>
-                <Line type="monotone" name='Fecha'  dataKey='Fecha'stroke="#151615"/>
-                <Line type="monotone" name='Valor Dolar BLue'  dataKey='Valor'stroke="#151615"/>
+                <Line type="monotone" name='Fecha'  dataKey='Fecha'stroke="#494948"/>
+                <Line type="monotone" name='Valor Dolar BLue'  dataKey='Valor'stroke="#494948"/>
                 </LineChart>
             </ResponsiveContainer>
         </div>

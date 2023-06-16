@@ -12,8 +12,8 @@ const Barchar = ({data}) => {
                 <YAxis dataKey="Valor"/>
                 <Tooltip  wrapperStyle={{outline: 'none'}}/>
                 <Legend  verticalAlign="top" height={36} iconType="line"/>
-                <Bar dataKey="Fecha" name='Fecha' fill="#151615" />
-                <Bar dataKey="Valor" name='Valor Dolar Oficial' fill="#151615" />
+                <Bar dataKey="Fecha" name='Fecha' fill="#494948" />
+                <Bar dataKey="Valor" name='Valor Dolar Oficial' fill="#494948" />
             </BarChart>
             </ResponsiveContainer>
         </div>
