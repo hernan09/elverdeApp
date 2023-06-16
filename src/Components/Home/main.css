@@ -91,7 +91,7 @@
   
 }
 .row {
-  background: #f1c40f;;
+  background: #494948;;
   animation: fade 5s infinite;
   animation-direction: alternate;
 }
@@ -120,7 +120,7 @@
 
 
 @keyframes fade {
-  from { background: #8a8988; }
+  from { background: #494948; }
   to { background: #181717; }
 }
 
