@@ -90,10 +90,40 @@
   margin-bottom: 30px;
   
 }
-.venta {
-  
-  
+.row {
+  background: #f1c40f;;
+  animation: fade 5s infinite;
+  animation-direction: alternate;
 }
+.row-1 {
+}
+.row-2 {
+  animation-delay:0.5s;
+}
+.row-3 {
+  animation-delay:1s;
+}
+.row-4 {
+  animation-delay:1.5s;
+}
+.row-5 {
+  animation-delay:2s;
+}
+.row-6 {
+  animation-delay:2.5s;
+}
+.row-7 {
+  animation-delay:3s;
+}
+
+
+
+
+@keyframes fade {
+  from { background: #8a8988; }
+  to { background: #181717; }
+}
+
 
 
 .promedio {

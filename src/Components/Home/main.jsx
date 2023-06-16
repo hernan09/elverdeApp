@@ -142,15 +142,15 @@ function Home(){
                 <div className='content-dolarblue'>
                     <h3 className='title blue'>Dolar {DolaBlue}</h3> 
                     {/* hacer metodo que afecte ambas box con icono de flecita que muestre si aumento o subio */}
-                    <div className='content-text venta'>
+                    <div className='content-text venta row-2 row'>
                         <h3>Venta</h3>
                         <span className='item-span'>{<CountUp end={ShellBlue} duration={2}/>}</span>
                     </div>
-                    <div className='content-text compra'>
+                    <div className='content-text compra row-3 row'>
                         <h3>Compra</h3>
                         <span className='item-span'>{<CountUp end={buyBlue} duration={2}/>}</span>
                     </div>
-                    <div className='content-text promedio blue-average'>
+                    <div className='content-text promedio blue-average row-4 row'>
                         <h3 className='title-prom'>Promedio</h3>
                         <span className='item-span-prom'>{<CountUp end={averageBlue} duration={1.6}/>}</span>
                         <span className='content-arrow-blue'>
@@ -164,15 +164,15 @@ function Home(){
                 </div>
                 <div className='content-dolarofi'>
                     <h3 className='title ofi'>Dolar {DolarOfi}</h3>
-                    <div className='content-text venta'>
+                    <div className='content-text venta row-5 row'>
                         <h3>Venta</h3>
                         <span className='item-span'>{<CountUp end={ShellOfi} duration={2}/>}</span>
                     </div>
-                    <div className='content-text compra'>
+                    <div className='content-text compra row-6 row'>
                         <h3>Compra</h3>
                         <span className='item-span'>{<CountUp end={buyOfi} duration={2}/>}</span>
                     </div>  
-                    <div className='content-text promedio oficial-average'>
+                    <div className='content-text promedio oficial-average row-7 row'>
                         <h3 className='title-prom'>Promedio</h3>
                         <span className='item-span-prom'>{<CountUp end={averageOfi} duration={1.6}/>}</span>
                         <span className='content-arrow-ofi'>

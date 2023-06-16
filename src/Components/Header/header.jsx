@@ -4,7 +4,7 @@ import ImgIcon from '../../assets/images/dolar.jpg';
 
 const header = () => {
     return (
-        <div className='content-header'>
+        <div className='content-header row-1 row'>
         <h2 className='titleapp'>
             <img src={ImgIcon} className='imgtitle firstimg' alt='...'/>
              <span className='titlebackground'>EL VERDE APP</span>
