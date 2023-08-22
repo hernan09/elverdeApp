@@ -88,7 +88,7 @@ function Home(){
                 setNewData(newDataArray)
                 setNewDataOfi(newDataArrayOfi)
             }
-            return newData, newDataOfi;
+            return newData;
         });
     } 
 
@@ -188,8 +188,7 @@ function Home(){
            {!isLoading && <div className='box-data'>
             <LInechart data={newData}/>
             </div>}
-            {!isLoading && <Barchar data={newDataOfi}/>}
-            {/* {!isLoading && <Piechar data={newData}/>} */}
+            {/* {!isLoading && <Barchar data={newDataOfi}/>} */}
            {!isLoading && <Footer/>}
         </div>
     );
