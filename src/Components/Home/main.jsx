@@ -188,7 +188,7 @@ function Home(){
            { !isLoading && <div className='box-data'>
             <LInechart data={newData}/>
             </div> }
-            {/* {!isLoading && <Barchar data={newDataOfi}/>} */}
+            {!isLoading && <Barchar data={newDataOfi}/>}
            {!isLoading && <Footer/>}
         </div>
     );
