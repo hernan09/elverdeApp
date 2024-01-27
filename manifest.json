@@ -4,10 +4,8 @@
     "version": "1.0",
     "description": "Descripción de mi extensión",
     "permissions": [
-      "tabs", "Permite interactuar con las pestañas del navegador",
-      "activeTab",  "Permite a la extensión interactuar con la pestaña activa",
-      "http://*/*",  "Permite acceso a cualquier URL HTTP",
-      "https://*/*" ," Permite acceso a cualquier URL HTTPS"
+      "http://*/*",  "http://localhost:3000",
+      "https://*/*" ," https://elverde-app.vercel.app/"
     ],
     "action": {
       "default_popup": "./build/index.html",
@@ -37,8 +35,7 @@
       {
         "matches": [
           "<all_urls>"
-        ],
-        "js": ["content.js"] 
+        ]
       }
     ]
   }
