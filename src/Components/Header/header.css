@@ -1,12 +1,12 @@
 .titleapp {
     padding: 16px;
-    color: white;
+    color: #305843;
     font-family: 'Source Sans Pro', sans-serif;
     border-radius: 8px;
     max-width: 670px;
     margin: auto;
     margin-bottom: 15px;
-    background-color: black;
+    background-color: #f5f5f5;;
 }
 
 .firstimg {
