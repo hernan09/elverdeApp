@@ -110,6 +110,9 @@
   left: 47px;
   font-weight: 700;
   font-size: 18px;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+  padding: 6px;
+  border-radius: 14px;
 }
 
 .item-span {
@@ -117,6 +120,7 @@
   font-family: 'Noto Sans Mono', monospace;
   margin-left: 10px;
   transition: all 3s ease;
+ 
 }
 
 .title {
