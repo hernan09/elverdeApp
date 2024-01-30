@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { Toaster, toast } from 'sonner'
 import CountUp from 'react-countup';
 import Footer from '../Footer/footer';
 import LInechart from '../Linechar/linechar';
 import Barchar from '../Barchar/barchar';
 import Header from '../Header/header';
-//import Weather from '../Weather/weather';
+import Weather from '../Weather/weather';
 import './main.css';
 import ArrowUp from '../../assets/images/arrowup.png'
 import ArrowDown from '../../assets/images/arrowdown.png'
-
-
-
 
 
 function Home(){
@@ -31,6 +29,7 @@ function Home(){
     const [data, setData] = useState(null);
     const [newData, setNewData] = useState([]);
     const [newDataOfi, setNewDataOfi] = useState([]);
+    
     
     //todavia no esta aplicado
     // const [variationOfi, setVariationOfi] = useState(null);
@@ -63,6 +62,10 @@ function Home(){
             calculateAverageOficial(buyOfi, ShellOfi)
             CalculateGrowthBlue(averageBlue)
             setIsLoading(false);
+            if (ShellBlue != null) {
+                toast.info('se mostraran mensajes en cuanto se actualicen')
+                toast.success(`el valor del dolar blue actualizado es : ${ShellBlue}$`)
+            }
         })
         .catch(err => console.error('error:' + err));
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -144,15 +147,15 @@ function Home(){
                     {/* hacer metodo que afecte ambas box con icono de flecita que muestre si aumento o subio */}
                     <div className='content-text venta row-2 row'>
                         <h3 className='item-title-venta'>Venta</h3>
-                        <span className='item-span'>{<CountUp end={ShellBlue} duration={2}/>}</span>
+                        <span className='item-span'>{<CountUp end={ShellBlue} duration={1}/>}</span>
                     </div>
                     <div className='content-text compra row-3 row'>
                         <h3 className='item-title-compra'>Compra</h3>
-                        <span className='item-span'>{<CountUp end={buyBlue} duration={2}/>}</span>
+                        <span className='item-span'>{<CountUp end={buyBlue} duration={1}/>}</span>
                     </div>
                     <div className='content-text promedio blue-average row-4 row'>
                         <h3 className='title-prom'>Promedio</h3>
-                        <span className='item-span-prom'>{<CountUp end={averageBlue} duration={1.6}/>}</span>
+                        <span className='item-span-prom'>{<CountUp end={averageBlue} duration={1.2}/>}</span>
                         <span className='content-arrow-blue'>
                             {flagBlue && <img className='img-arrow' src={ArrowUp} alt='...'/>}
                             {!flagBlue && <img className='img-arrow' src={ArrowDown} alt='...'/>}
@@ -166,15 +169,15 @@ function Home(){
                     <h3 className='title ofi'>Dolar {DolarOfi}</h3>
                     <div className='content-text venta row-5 row'>
                         <h3 className='item-title-venta'>Venta</h3>
-                        <span className='item-span'>{<CountUp end={ShellOfi} duration={2}/>}</span>
+                        <span className='item-span'>{<CountUp end={ShellOfi} duration={1}/>}</span>
                     </div>
                     <div className='content-text compra row-6 row'>
                         <h3 className='item-title-compra'>Compra</h3>
-                        <span className='item-span'>{<CountUp end={buyOfi} duration={2}/>}</span>
+                        <span className='item-span'>{<CountUp end={buyOfi} duration={1}/>}</span>
                     </div>  
                     <div className='content-text promedio oficial-average row-7 row'>
                         <h3 className='title-prom'>Promedio</h3>
-                        <span className='item-span-prom'>{<CountUp end={averageOfi} duration={1.6}/>}</span>
+                        <span className='item-span-prom'>{<CountUp end={averageOfi} duration={1.2}/>}</span>
                         <span className='content-arrow-ofi'>
                             {flagOfi && <img className='img-arrow' src={ArrowUp} alt='...'/>}
                             {!flagOfi && <img className='img-arrow' src={ArrowDown} alt='...'/>}
@@ -185,9 +188,11 @@ function Home(){
                     
                 </div>
            </div>}
+           {<Toaster expand={true} richColors position="bottom-right" />}
            { !isLoading && <div className='box-data'>
             <LInechart data={newData}/>
             </div> }
+            {/* {!isLoading && <Weather/>} */}
             {!isLoading && <Barchar data={newDataOfi}/>}
            {!isLoading && <Footer/>}
         </div>
