@@ -147,15 +147,15 @@ function Home(){
                     {/* hacer metodo que afecte ambas box con icono de flecita que muestre si aumento o subio */}
                     <div className='content-text venta row-2 row'>
                         <h3 className='item-title-venta'>Venta</h3>
-                        <span className='item-span'>{<CountUp end={ShellBlue} duration={1}/>}</span>
+                        <span className='item-span'>{<CountUp end={ShellBlue} duration={0.5}/>}</span>
                     </div>
                     <div className='content-text compra row-3 row'>
                         <h3 className='item-title-compra'>Compra</h3>
-                        <span className='item-span'>{<CountUp end={buyBlue} duration={1}/>}</span>
+                        <span className='item-span'>{<CountUp end={buyBlue} duration={0.5}/>}</span>
                     </div>
                     <div className='content-text promedio blue-average row-4 row'>
                         <h3 className='title-prom'>Promedio</h3>
-                        <span className='item-span-prom'>{<CountUp end={averageBlue} duration={1.2}/>}</span>
+                        <span className='item-span-prom'>{<CountUp end={averageBlue} duration={0.7}/>}</span>
                         <span className='content-arrow-blue'>
                             {flagBlue && <img className='img-arrow' src={ArrowUp} alt='...'/>}
                             {!flagBlue && <img className='img-arrow' src={ArrowDown} alt='...'/>}
@@ -169,15 +169,15 @@ function Home(){
                     <h3 className='title ofi'>Dolar {DolarOfi}</h3>
                     <div className='content-text venta row-5 row'>
                         <h3 className='item-title-venta'>Venta</h3>
-                        <span className='item-span'>{<CountUp end={ShellOfi} duration={1}/>}</span>
+                        <span className='item-span'>{<CountUp end={ShellOfi} duration={0.5}/>}</span>
                     </div>
                     <div className='content-text compra row-6 row'>
                         <h3 className='item-title-compra'>Compra</h3>
-                        <span className='item-span'>{<CountUp end={buyOfi} duration={1}/>}</span>
+                        <span className='item-span'>{<CountUp end={buyOfi} duration={0.5}/>}</span>
                     </div>  
                     <div className='content-text promedio oficial-average row-7 row'>
                         <h3 className='title-prom'>Promedio</h3>
-                        <span className='item-span-prom'>{<CountUp end={averageOfi} duration={1.2}/>}</span>
+                        <span className='item-span-prom'>{<CountUp end={averageOfi} duration={0.7}/>}</span>
                         <span className='content-arrow-ofi'>
                             {flagOfi && <img className='img-arrow' src={ArrowUp} alt='...'/>}
                             {!flagOfi && <img className='img-arrow' src={ArrowDown} alt='...'/>}
