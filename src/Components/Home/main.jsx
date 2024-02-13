@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Toaster, toast } from 'sonner'
 import CountUp from 'react-countup';
 import Footer from '../Footer/footer';
@@ -30,7 +30,8 @@ function Home(){
     const [newData, setNewData] = useState([]);
     const [newDataOfi, setNewDataOfi] = useState([]);
     
-    
+    const divBlueRef = useRef(null);
+    const divOfieRef = useRef(null);
     //todavia no esta aplicado
     // const [variationOfi, setVariationOfi] = useState(null);
     // const [variationBlue, setVariationBlue] = useState(null);
@@ -63,7 +64,7 @@ function Home(){
             CalculateGrowthBlue(averageBlue)
             setIsLoading(false);
             if (ShellBlue != null) {
-                toast.info('se mostraran mensajes en cuanto se actualicen')
+                toast.info('se mostraran mensajes de actualizacion')
                 toast.success(`el valor del dolar blue actualizado es : ${ShellBlue}$`)
             }
         })
@@ -97,27 +98,27 @@ function Home(){
 
 
     const calculateColorAverageBlue = ()=> {
-        let divAverageBLue = document.querySelector('.blue-average');
+    // let divRef = document.querySelector('.blue-average');
         if (ShellBLueAfter > ShellBlue) {
-            divAverageBLue?.classList.add('lowred')
-            divAverageBLue?.classList.remove('higtgreen')
+            divBlueRef.current?.classList.add('lowred')
+            divBlueRef.current?.classList.remove('higtgreen')
             setFLagBlue(false);
         } else {
-            divAverageBLue?.classList.add('higtgreen')
-            divAverageBLue?.classList.remove('lowred')
+            divBlueRef.current?.classList.add('higtgreen')
+            divBlueRef.current?.classList.remove('lowred')
             setFLagBlue(true);
         }
     }
 
 
     const calculateColorAverageOficial = ()=> {
-        let divAverageOficial = document.querySelector('.oficial-average');
+        // let divAverageOficial = document.querySelector('.oficial-average');
         if (ShellOfiAfter > ShellOfi) {
-            divAverageOficial?.classList.add('lowred')
+            divOfieRef.current?.classList.add('lowred')
             setFLagOfi(false)
             
         } else {
-            divAverageOficial?.classList.add('higtgreen')
+            divOfieRef.current?.classList.add('higtgreen')
             setFLagOfi(true)
         }
     }
@@ -153,7 +154,7 @@ function Home(){
                         <h3 className='item-title-compra'>Compra</h3>
                         <span className='item-span'>{<CountUp end={buyBlue} duration={0.5}/>}</span>
                     </div>
-                    <div className='content-text promedio blue-average row-4 row'>
+                    <div ref={divBlueRef} className='content-text promedio blue-average row-4 row'>
                         <h3 className='title-prom'>Promedio</h3>
                         <span className='item-span-prom'>{<CountUp end={averageBlue} duration={0.7}/>}</span>
                         <span className='content-arrow-blue'>
@@ -175,7 +176,7 @@ function Home(){
                         <h3 className='item-title-compra'>Compra</h3>
                         <span className='item-span'>{<CountUp end={buyOfi} duration={0.5}/>}</span>
                     </div>  
-                    <div className='content-text promedio oficial-average row-7 row'>
+                    <div ref={divOfieRef} className='content-text promedio oficial-average row-7 row'>
                         <h3 className='title-prom'>Promedio</h3>
                         <span className='item-span-prom'>{<CountUp end={averageOfi} duration={0.7}/>}</span>
                         <span className='content-arrow-ofi'>

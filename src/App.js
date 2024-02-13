@@ -1,7 +1,9 @@
 import './App.css';
 import Home from './Components/Home/main.jsx';
 
+import ReactGA from 'react-ga';
 
+ReactGA.initialize('G-Y358VKXYPF');
 
 
 function App() {
