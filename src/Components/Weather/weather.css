@@ -1,5 +1,5 @@
 .content-weather {
-  height: 30px;
+  height: 60px;
   background-color: rgb(157 179 161);
   padding: 10px;
   border-radius: 5px;
@@ -9,6 +9,7 @@
   box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
   margin-bottom: 20px;
   overflow: hidden;
+  box-sizing: border-box;
 }
 .content-data {
     display: flex;
@@ -32,8 +33,6 @@
   font-size: 16px;
   color: #ffffff;
   padding: 8px;
-  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
-  border-radius: 17px;
 }
 
 .content-data {
