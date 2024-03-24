@@ -6,6 +6,7 @@ import LInechart from '../Linechar/linechar';
 import Barchar from '../Barchar/barchar';
 import Header from '../Header/header';
 import Weather from '../Weather/weather';
+import Zoomable from '../Zoomable/ZoomableSunburstChart';
 import './main.css';
 import ArrowUp from '../../assets/images/arrowup.png'
 import ArrowDown from '../../assets/images/arrowdown.png'
@@ -142,6 +143,7 @@ function Home(){
         <div>
            {isLoading && <h1 className='load'>Cargando....</h1>}
            {!isLoading && <Header/>}
+           {!isLoading && <Weather/>}
            {!isLoading && <div className='home-contain'>
                 <div className='content-dolarblue'>
                     <h3 className='title blue'>Dolar {DolaBlue}</h3> 
@@ -190,10 +192,9 @@ function Home(){
                 </div>
            </div>}
            {<Toaster expand={true} richColors position="bottom-right" />}
-           { !isLoading && <div className='box-data'>
+           {!isLoading && <div className='box-data'>
             <LInechart data={newData}/>
             </div> }
-            {/* {!isLoading && <Weather/>} */}
             {!isLoading && <Barchar data={newDataOfi}/>}
            {!isLoading && <Footer/>}
         </div>
