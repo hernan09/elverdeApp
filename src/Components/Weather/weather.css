@@ -39,15 +39,15 @@
 .content-data {
     display: flex; /* Utiliza flexbox para alinear los elementos horizontalmente */
     overflow: hidden; /* Oculta el contenido que se desborda */
-    animation: slideLeft 7s linear infinite; /* Animación horizontal de 10 segundos lineal infinita */
+   /* animation: slideLeft 7s linear infinite;  Animación horizontal de 10 segundos lineal infinita */
   }
 
-  @media screen and (max-width: 332px){
+  @media(max-width: 332px){
     .temp {
-      font-size: 15px;
+      font-size: 15px !important;
     }
     .title-clima {
-      font-size: 16px;
+      font-size: 15px !important;
   }
   }
   
