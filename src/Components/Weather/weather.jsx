@@ -56,7 +56,7 @@ const WeatherComponent = () => {
         <p>Cargando datos del clima...</p>
       ) : (
         <div className='content-data'>
-          <h2 className='title-clima'>Clima en Buenos Aires</h2>
+          <h2 className='title-clima'>Buenos Aires</h2>
           <p className='temp'>{weatherData?.main?.temp} °C</p>
           <div>{renderWeatherIcon()}</div>
         </div>

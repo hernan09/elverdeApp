@@ -15,7 +15,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: -17px;
+    margin-top: -11px;
     justify-content:space-around;
 }
 .img-clima {
@@ -32,21 +32,26 @@
   font-weight: 700;
   font-size: 16px;
   color: #ffffff;
-  padding: 8px;
 }
 
 .content-data {
     display: flex; /* Utiliza flexbox para alinear los elementos horizontalmente */
     overflow: hidden; /* Oculta el contenido que se desborda */
-   /* animation: slideLeft 7s linear infinite;  Animación horizontal de 10 segundos lineal infinita */
+    animation: slideLeft 5s linear infinite; 
   }
 
-  @media(max-width: 332px){
+  @media(max-width: 320px){
+    .content-data {
+      margin-top: -10px !important;
+    }
+    .content-weather {
+      max-width: 300px;
+    }
     .temp {
-      font-size: 15px !important;
+      font-size: 16px !important;
     }
     .title-clima {
-      font-size: 15px !important;
+      font-size: 16px !important;
   }
   }
   
