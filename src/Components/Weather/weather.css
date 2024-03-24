@@ -42,7 +42,7 @@
     animation: slideLeft 7s linear infinite; /* Animación horizontal de 10 segundos lineal infinita */
   }
 
-  @media screen and (max-width: 322px){
+  @media screen and (max-width: 332px){
     .temp {
       font-size: 15px;
     }
