@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { WiDaySunny, WiCloudy, WiRain, WiSnow, WiThunderstorm } from 'react-icons/wi';
-import sunnyImage from '../../assets/images/clima/clear-day.svg';
-import cloudImage from '../../assets/images/clima/cloudy.svg';
-import rainyImage from '../../assets/images/clima/rain.svg';
-import snowImage from '../../assets/images/clima/snow.svg';
-import thunderImage from '../../assets/images/clima/hurricane.svg';
+import { MdLocationOn } from 'react-icons/md';
 import './weather.css'
 
 const WeatherComponent = () => {
@@ -15,9 +11,9 @@ const WeatherComponent = () => {
   useEffect(() => {
     const fetchWeatherData = async () => {
       try {
-        const apiKey = 'a62cd253fd9cea7f8f473ef83d38952f'; // Reemplaza con tu clave de API de OpenWeather
+        const apiKey = 'a62cd253fd9cea7f8f473ef83d38952f';
         const response = await axios.get(
-          `https://api.openweathermap.org/data/2.5/weather?q=Buenos Aires&appid=${apiKey}&units=metric`
+          `https://api.openweathermap.org/data/2.5/weather?q=Buenos Aires&appid=${apiKey}&units=metric&lang=es`
         );
 
         setWeatherData(response?.data);
@@ -29,38 +25,49 @@ const WeatherComponent = () => {
     };
 
     fetchWeatherData();
+    const interval = setInterval(fetchWeatherData, 300000);
+    return () => clearInterval(interval);
   }, []);
 
-  const renderWeatherIcon = () => {
+  const getWeatherIcon = () => {
     const weatherCondition = weatherData?.weather[0]?.main?.toLowerCase();
 
     switch (weatherCondition) {
       case 'clear':
-        return <img className='img-clima' src={sunnyImage} alt="Sunny" />;
+        return <WiDaySunny className="weather-icon" />;
       case 'clouds':
-        return <img className='img-clima' src={cloudImage} alt="Cloudy" />;
+        return <WiCloudy className="weather-icon" />;
       case 'rain':
-        return <img className='img-clima' src={rainyImage} alt="Rainy" />;
+        return <WiRain className="weather-icon" />;
       case 'snow':
-        return <img className='img-clima' src={snowImage} alt="Snowy" />;
+        return <WiSnow className="weather-icon" />;
       case 'thunderstorm':
-        return <img className='img-clima' src={thunderImage} alt="Thunderstorm" />;
+        return <WiThunderstorm className="weather-icon" />;
       default:
-        return null;
+        return <WiCloudy className="weather-icon" />;
     }
   };
 
+  if (loading) {
+    return (
+      <div className='weather-container loading'>
+        <div className="weather-loading-spinner"></div>
+      </div>
+    );
+  }
+
   return (
-    <div className='content-weather'>
-      {loading ? (
-        <p>Cargando datos del clima...</p>
-      ) : (
-        <div className='content-data'>
-          <h2 className='title-clima'>Buenos Aires</h2>
-          <p className='temp'>{weatherData?.main?.temp} °C</p>
-          <div>{renderWeatherIcon()}</div>
+    <div className='weather-container'>
+      <div className='weather-content'>
+        <div className='weather-info-group'>
+          <MdLocationOn className="location-icon" />
+          <span className='city-name'>Buenos Aires</span>
         </div>
-      )}
+        <div className='weather-info-group'>
+          {getWeatherIcon()}
+          <span className='temperature'>{Math.round(weatherData?.main?.temp)}°</span>
+        </div>
+      </div>
     </div>
   );
 };
