@@ -9,21 +9,28 @@ const NewsComponent = () => {
 
     const fetchNews = async () => {
         try {
-            const apiKey = eed0fa99e9c04559a4d1395214b539fa 
-            //process.env.REACT_APP_NEWS_API_KEY;
+            const apiKey = process.env.REACT_APP_NEWS_API_KEY;
+            
+            // Debug info para desarrollo
+            if (process.env.NODE_ENV === 'development') {
+                console.log('Environment:', process.env.NODE_ENV);
+                console.log('API Key exists:', !!apiKey);
+            }
             
             if (!apiKey) {
-                setError('Se requiere una API key de NewsAPI. Por favor configura REACT_APP_NEWS_API_KEY en tu archivo .env');
+                setError('Se requiere una API key de NewsAPI. Por favor configura REACT_APP_NEWS_API_KEY en tu archivo .env o en las variables de entorno de Vercel');
                 setLoading(false);
                 return;
             }
 
-            // Cambiamos a noticias de Estados Unidos y categoría general para asegurar resultados
             const response = await axios.get(
                 `https://newsapi.org/v2/top-headlines?country=us&category=general&pageSize=5&apiKey=${apiKey}`
             );
             
-            console.log('API Response:', response.data); // Debug info
+            // Solo mostramos la respuesta en desarrollo
+            if (process.env.NODE_ENV === 'development') {
+                console.log('API Response:', response.data);
+            }
 
             if (response.data.articles && response.data.articles.length > 0) {
                 setNews(response.data.articles);
@@ -32,10 +39,14 @@ const NewsComponent = () => {
                 setError(`No se encontraron noticias. Status: ${response.data.status}, Total Results: ${response.data.totalResults}`);
             }
         } catch (err) {
-            console.log('Error completo:', err); // Debug info
+            // Debug info más detallada en desarrollo
+            if (process.env.NODE_ENV === 'development') {
+                console.log('Error completo:', err);
+            }
             
             if (err.response?.status === 401) {
-                setError('Error de autenticación: La API key no es válida o ha expirado. Por favor verifica tu API key en https://newsapi.org');
+                setError(`Error de autenticación: La API key no es válida o ha expirado. 
+                         Por favor verifica tu API key en https://newsapi.org y asegúrate de que esté correctamente configurada en Vercel.`);
             } else if (err.response?.status === 429) {
                 setError('Se ha excedido el límite de peticiones. Por favor intenta más tarde.');
             } else if (err.response?.data) {
@@ -43,7 +54,7 @@ const NewsComponent = () => {
             } else {
                 setError('Error al cargar las noticias. Por favor intenta más tarde.');
             }
-            console.error('Error fetching news:', err);
+            console.error('Error fetching news:', err.message);
         } finally {
             setLoading(false);
         }
