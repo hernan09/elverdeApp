@@ -9,7 +9,8 @@ const NewsComponent = () => {
 
     const fetchNews = async () => {
         try {
-            const apiKey = process.env.REACT_APP_NEWS_API_KEY;
+            const apiKey = eed0fa99e9c04559a4d1395214b539fa 
+            //process.env.REACT_APP_NEWS_API_KEY;
             
             if (!apiKey) {
                 setError('Se requiere una API key de NewsAPI. Por favor configura REACT_APP_NEWS_API_KEY en tu archivo .env');
