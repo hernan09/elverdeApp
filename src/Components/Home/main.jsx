@@ -7,6 +7,7 @@ import Barchar from '../Barchar/barchar';
 import Header from '../Header/header';
 import Weather from '../Weather/weather';
 import Zoomable from '../Zoomable/ZoomableSunburstChart';
+import NewsComponent from '../News/News';
 import './main.css';
 import ArrowUp from '../../assets/images/arrowup.png'
 import ArrowDown from '../../assets/images/arrowdown.png'
@@ -196,6 +197,7 @@ function Home(){
             <LInechart data={newData}/>
             </div> }
             {!isLoading && <Barchar data={newDataOfi}/>}
+            {!isLoading && <NewsComponent />}
            {!isLoading && <Footer/>}
         </div>
     );

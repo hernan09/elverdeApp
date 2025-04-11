@@ -38,9 +38,9 @@
     display: flex; /* Utiliza flexbox para alinear los elementos horizontalmente */
     overflow: hidden; /* Oculta el contenido que se desborda */
     animation: slideLeft 5s linear infinite; 
-  }
+}
 
-  @media(max-width: 320px){
+@media(max-width: 320px){
     .content-data {
       margin-top: -10px !important;
     }
@@ -53,21 +53,21 @@
     .title-clima {
       font-size: 16px !important;
   }
-  }
+}
   
-  @keyframes slideLeft {
+@keyframes slideLeft {
     0% {
       transform: translateX(0); /* Inicia en la posición original */
     }
     100% {
       transform: translateX(-100%); /* Desplaza hacia la izquierda 100% */
     }
-  }
+}
   
-  .content-data h2,
-  .content-data h3,
-  .content-data img {
+.content-data h2,
+.content-data h3,
+.content-data img {
     margin: 0;
     padding: 0;
-  }
+}
   
