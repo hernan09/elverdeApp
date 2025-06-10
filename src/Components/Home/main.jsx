@@ -197,6 +197,7 @@ function Home(){
             <LInechart data={newData}/>
             </div> }
             {!isLoading && <Barchar data={newDataOfi}/>}
+            {!isLoading &&  <NewsComponent/>}
            {!isLoading && <Footer/>}
         </div>
     );
