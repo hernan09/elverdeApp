@@ -1,0 +1,24 @@
+.download-pdf-btn {
+  margin: 20px auto;
+  display: block;
+  padding: 12px 24px;
+  background-color: #145a12;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(20,90,18,0.08);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.download-pdf-btn:disabled {
+  background-color: #a1b8a1;
+  color: #e0e0e0;
+  cursor: not-allowed;
+}
+.download-pdf-btn:hover:not(:disabled) {
+  background-color: #376c56;
+  box-shadow: 0 6px 12px rgba(20,90,18,0.15);
+}
