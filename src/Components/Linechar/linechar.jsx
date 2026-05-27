@@ -7,47 +7,47 @@ import {
   XAxis,
   YAxis,
   Tooltip,
-  Legend,
   Line,
 } from "recharts";
+import ChartTooltip from "../ChartTooltip";
 
 const Linechar = ({ data }) => {
   return (
     <div className="content-barchar">
-      <ResponsiveContainer width={"90%"} aspect={1.5}>
+      <h3 className="chart-title">Evolución Dólar Blue — 30 días</h3>
+      <ResponsiveContainer width="100%" height={260}>
         <LineChart
           data={data}
-          width="300px"
-          height={"200px"}
-          margin={{
-            top: 5,
-            bottom: 5,
-            right: 5,
-            left: 5,
-          }}
+          margin={{ top: 5, bottom: 5, right: 10, left: -20 }}
         >
-          <CartesianGrid strokeDasharray="4 2" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
           <XAxis
             dataKey="Fecha"
             height={56}
-            interval={"preserveStart"}
+            interval="preserveStart"
             allowDataOverflow={true}
             reversed={true}
-            tick={{ stroke: "#494948", strokeWidth: 0 }}
+            tick={{ fill: "#9ca3af", fontSize: 11, fontFamily: "DM Sans" }}
+            axisLine={{ stroke: "#e5e7eb" }}
+            tickLine={false}
           />
-          <YAxis dataKey="Valor" />
+          <YAxis
+            dataKey="Valor"
+            tick={{ fill: "#9ca3af", fontSize: 11, fontFamily: "DM Sans" }}
+            axisLine={false}
+            tickLine={false}
+          />
           <Tooltip
-            active
-            cursor={{ stroke: "#494948", strokeWidth: 2 }}
-            wrapperStyle={{ outline: "none" }}
+            content={<ChartTooltip color="#2d6a4f" labelName="Dólar Blue" />}
+            cursor={{ stroke: "#2d6a4f", strokeWidth: 1, strokeDasharray: "4 4" }}
           />
-          <Legend verticalAlign="top" height={36} iconType="plainline" />
-          <Line type="monotone" name="Fecha" dataKey="Fecha" stroke="#494948" />
           <Line
             type="monotone"
-            name="Valor Dolar BLue"
             dataKey="Valor"
-            stroke="#494948"
+            stroke="#2d6a4f"
+            strokeWidth={2}
+            dot={{ fill: "#2d6a4f", r: 3, strokeWidth: 0 }}
+            activeDot={{ fill: "#2d6a4f", r: 5, strokeWidth: 2, stroke: "#d8f3dc" }}
           />
         </LineChart>
       </ResponsiveContainer>

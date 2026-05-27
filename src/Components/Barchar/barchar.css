@@ -1,12 +1,24 @@
+@import '../../styles/variables.css';
+
 .content-barchart {
-    width: 100%;
-    max-width: 700px;
-    margin: auto;
-    min-height: 200px;
-    border-radius: 8px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
-    border-radius: 8px;
-    background-color: #f5f5f5;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--space-6);
+  transition: box-shadow var(--transition);
+}
+
+.content-barchart:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.chart-title {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-4);
+  text-align: left;
 }
